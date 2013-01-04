@@ -1,5 +1,5 @@
 import os
-from django.conf.urls.defaults import *
+from django.conf.urls import patterns, include
 from django.contrib import admin
 
 admin.autodiscover()
@@ -14,4 +14,3 @@ urlpatterns = patterns('',
     (r'auth/', include('django.contrib.auth.urls')),
     (r'', include('actstream.urls')),
 )
-
