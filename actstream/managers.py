@@ -1,11 +1,8 @@
+from .decorators import stream
+from .gfk import GFKManager
 from collections import defaultdict
-
-from django.db.models import get_model
-from django.db.models import Q
 from django.contrib.contenttypes.models import ContentType
-
-from actstream.gfk import GFKManager
-from actstream.decorators import stream
+from django.db.models import Q, get_model
 
 
 class ActionManager(GFKManager):
