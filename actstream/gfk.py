@@ -1,10 +1,8 @@
-from django.conf import settings
+from django.contrib.contenttypes.generic import GenericForeignKey
+from django.contrib.contenttypes.models import ContentType
 from django.db.models import Manager
 from django.db.models.query import QuerySet, EmptyQuerySet
 from django.utils.encoding import smart_unicode
-
-from django.contrib.contenttypes.models import ContentType
-from django.contrib.contenttypes.generic import GenericForeignKey
 
 
 class GFKManager(Manager):

@@ -1,5 +1,5 @@
-from django.conf.urls.defaults import *
-from actstream import feeds
+from django.conf.urls import url, patterns
+from . import feeds
 
 urlpatterns = patterns('actstream.views',
     # Syndication Feeds

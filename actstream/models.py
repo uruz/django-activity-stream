@@ -1,11 +1,15 @@
-from django.db import models
-from django.core.urlresolvers import reverse
-from django.core.exceptions import ImproperlyConfigured
-from django.utils.translation import ugettext as _
-
+from . import settings as actstream_settings
+from .actions import action_handler
+from .managers import FollowManager
+from .signals import action
+from django.contrib.auth.models import User
 from django.contrib.contenttypes import generic
 from django.contrib.contenttypes.models import ContentType
-from django.contrib.auth.models import User
+from django.core.exceptions import ImproperlyConfigured
+from django.core.urlresolvers import reverse
+from django.db import models
+from django.utils.translation import ugettext as _
+
 
 try:
     from django.utils import timezone
@@ -14,10 +18,6 @@ except ImportError:
     from datetime import datetime
     now = datetime.now
 
-from actstream import settings as actstream_settings
-from actstream.signals import action
-from actstream.actions import action_handler
-from actstream.managers import FollowManager
 
 class Follow(models.Model):
     """

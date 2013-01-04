@@ -3,8 +3,8 @@ import datetime
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.contenttypes.models import ContentType
 
-from actstream.exceptions import check_actionable_model
-from actstream import settings
+from .exceptions import check_actionable_model
+from . import settings
 
 try:
     from django.utils import timezone

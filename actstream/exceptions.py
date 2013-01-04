@@ -1,7 +1,5 @@
-from django.db.models.base import ModelBase
+from .settings import get_models
 from django.core.exceptions import ImproperlyConfigured
-
-from actstream.settings import get_models
 
 
 class ModelNotActionable(ImproperlyConfigured):

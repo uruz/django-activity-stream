@@ -1,20 +1,20 @@
-from random import choice
-
-from django.db import connection
-from django.db.models import get_model
-from django.test import TestCase
+from .actions import follow, unfollow
+from .exceptions import ModelNotActionable
+from .models import (Action, Follow, model_stream, user_stream,
+    setup_generic_relations, following, followers)
+from .settings import get_models, SETTINGS
+from .signals import action
 from django.conf import settings
 from django.contrib.auth.models import User, AnonymousUser, Group
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.sites.models import Site
+from django.db import connection
+from django.db.models import get_model
 from django.template.loader import Template, Context
+from django.test import TestCase
+from random import choice
 
-from actstream.models import Action, Follow, model_stream, user_stream,\
-    setup_generic_relations, following, followers
-from actstream.actions import follow, unfollow
-from actstream.exceptions import ModelNotActionable
-from actstream.signals import action
-from actstream.settings import get_models, SETTINGS
+
 
 class LTE(int):
     def __new__(cls, n):

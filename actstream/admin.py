@@ -1,5 +1,5 @@
 from django.contrib import admin
-from actstream import models
+from .models import Action, Follow
 
 
 class ActionAdmin(admin.ModelAdmin):
@@ -18,5 +18,5 @@ class FollowAdmin(admin.ModelAdmin):
     raw_id_fields = ('user', 'content_type')
 
 
-admin.site.register(models.Action, ActionAdmin)
-admin.site.register(models.Follow, FollowAdmin)
+admin.site.register(Action, ActionAdmin)
+admin.site.register(Follow, FollowAdmin)
